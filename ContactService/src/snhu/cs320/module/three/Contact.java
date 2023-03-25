@@ -15,7 +15,7 @@ public class Contact {
 	private String address;
 	
 	// Maximum character allowance per the rubric
-	//private final int MAX_CHAR_ID = 10;
+	private final int MAX_CHAR_ID = 10;
 	private final int MAX_CHAR_FN = 10;
 	private final int MAX_CHAR_LN = 10;
 	private final int MAX_CHAR_PH = 10;
@@ -23,6 +23,13 @@ public class Contact {
 	
 	// Iterator to create unique contact IDs
 	private static int idIterator = 0;
+	
+	Contact(String id) {
+		super();
+		if(id != null && id.length() <= MAX_CHAR_ID && !id.isEmpty()) {
+			contactID = id;
+		}
+	}
 	
 	Contact(){
 		contactID = String.valueOf(idIterator);
@@ -78,6 +85,9 @@ public class Contact {
 	}
 	
 	public Boolean setPhone(String phone) {
+		if(phone == null) {
+			return false;
+		}
 		if(phone.length() != MAX_CHAR_PH) {
 			this.phone = phone;
 			return true;
@@ -89,7 +99,7 @@ public class Contact {
 		if (newAddress == null) {
 			return false;
 		}
-		if(newAddress.length() <= 30 && !newAddress.isBlank()) {
+		if(newAddress.length() <= MAX_CHAR_AD && !newAddress.isBlank()) {
 			this.address = newAddress;
 			return true;
 		}

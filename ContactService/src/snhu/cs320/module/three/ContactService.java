@@ -14,14 +14,29 @@ public class ContactService {
 
 	private ArrayList<Contact> contactsList = new ArrayList();
 
+	public String addContact(String id) {
+		// verify that the id doesn't already exist
+		Contact contact = searchContact(id);
+		if(contact == null) { // contact not found
+			// add a new contact
+			contact = new Contact(id);
+			contactsList.add(contact);
+			return contact.getContactID();
+
+		}
+		else { //
+			return null;
+		}
+	
+	}
+	
 	public String addContact() {
-		// add a new contact
 		Contact contact = new Contact();
 		contactsList.add(contact);
 		return contact.getContactID();
 	}
 	
-	private Contact searchContact(String id) {
+	public Contact searchContact(String id) {
 		// search for a contact
 		// iterate through contactsList to find the matching contactID
 		for(Contact contact : contactsList) {
@@ -29,19 +44,23 @@ public class ContactService {
 				return contact;
 			}
 		}
-		return null;
+		//System.out.println("not ...found");
+		Contact returnVal = null;
+		return returnVal;
 	}
 	
-	private Boolean deleteContact(String id) {
+	public Boolean deleteContact(String id) {
 		// delete a contact
 		Contact contact = searchContact(id);
 		if(contact == null) {
+			// not found
 			return false;
 		}
+		contactsList.remove(contact);
 		return true;
 	}
 	
-	private Boolean updateContact(String id, int item, String value) {
+	public Boolean updateContact(String id, int item, String value) {
 		// update the contact's first name
 		Contact contact = searchContact(id);
 		if(contact == null) {

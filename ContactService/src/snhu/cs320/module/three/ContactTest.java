@@ -3,10 +3,7 @@
  */
 package snhu.cs320.module.three;
 
-import java.lang.reflect.*;
-
 import org.junit.Assert;
-import org.junit.function.ThrowingRunnable;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -52,6 +49,17 @@ public class ContactTest {
 		// good name
 		Assert.assertTrue(contact.setAddress("1 2nd st,place,oh,12345"));
 
+	}
+	
+	@Test
+	void testPhone() {
+		// too long
+		Assert.assertFalse(contact.setPhone("12345678910"));
+		// cannot be empty/null
+		Assert.assertFalse(contact.setPhone(""));
+		Assert.assertFalse(contact.setPhone(null));
+		// too small
+		Assert.assertFalse(contact.setPhone("123"));	
 	}
 	
 	@Test
