@@ -44,7 +44,6 @@ public class ContactService {
 				return contact;
 			}
 		}
-		//System.out.println("not ...found");
 		Contact returnVal = null;
 		return returnVal;
 	}

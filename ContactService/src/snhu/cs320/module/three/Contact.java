@@ -88,7 +88,7 @@ public class Contact {
 		if(phone == null) {
 			return false;
 		}
-		if(phone.length() != MAX_CHAR_PH) {
+		if(phone.length() == MAX_CHAR_PH) {
 			this.phone = phone;
 			return true;
 		}

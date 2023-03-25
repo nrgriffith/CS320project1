@@ -59,7 +59,9 @@ public class ContactTest {
 		Assert.assertFalse(contact.setPhone(""));
 		Assert.assertFalse(contact.setPhone(null));
 		// too small
-		Assert.assertFalse(contact.setPhone("123"));	
+		Assert.assertFalse(contact.setPhone("123"));
+		// good phone
+		Assert.assertTrue(contact.setPhone("3048675309"));
 	}
 	
 	@Test
@@ -67,6 +69,11 @@ public class ContactTest {
 		// cannot be null
 		Assert.assertNotNull(contact.getContactID());
 		// cannot be updated
+		/* Note: I don't know what the best technique for this test was,
+		 * because the field is private and there is no set method for it,
+		 * so this checks for NoSuchFieldException when trying to access it.
+		 * I hope that's sufficient to prove that it cannot be updated.
+		*/
 		Assert.assertThrows(NoSuchFieldException.class, ()->{contact.getClass().getField("contactID");});
 	}
 }
