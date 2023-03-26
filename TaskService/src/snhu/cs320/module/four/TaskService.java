@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class TaskService {
 
-	private ArrayList<Task> taskList = new ArrayList();
+	private ArrayList<Task> taskList = new ArrayList<Task>();
 	
 	public Task searchTask(String id) {
 		// search for a task
@@ -19,7 +19,8 @@ public class TaskService {
 				return task;
 			}
 		}
-		return null;
+		Task returnTask = null;
+		return returnTask;
 	}
 	
 	// add with specified ID
@@ -51,7 +52,7 @@ public class TaskService {
 		if(task == null) {
 			return false;
 		}
-		taskList.remove(id)
+		taskList.remove(task);
 		return true;
 	}
 	
@@ -69,6 +70,7 @@ public class TaskService {
 				return true;
 			case 2: // update description
 				task.setTaskDescription(value);
+				return true;
 			default:
 				return false;
 		}
