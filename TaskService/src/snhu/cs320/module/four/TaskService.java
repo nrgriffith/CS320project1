@@ -19,8 +19,8 @@ public class TaskService {
 				return task;
 			}
 		}
-		Task returnTask = null;
-		return returnTask;
+		
+		return null;
 	}
 	
 	// add with specified ID
