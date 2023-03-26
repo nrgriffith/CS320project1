@@ -1,5 +1,7 @@
+package snhu.cs320.module.four;
 
 public class Task {
+	
 	private String taskID;
 	private String taskName;
 	private String taskDescription;
@@ -55,10 +57,11 @@ public class Task {
 		if(description == null) {
 			return false;
 		}
-		if(!description.isBlank() && description.length <= MAX_CHAR_DE) {
+		if(!description.isBlank() && description.length() <= MAX_CHAR_DE) {
 			this.taskDescription = description;
 			return true;
 		}
 		return false;
 	}
+
 }
