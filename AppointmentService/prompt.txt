@@ -1,0 +1,30 @@
+Module Five Milestone Guidelines and Rubric
+
+Overview
+
+As you have learned in previous modules, there are various types of software testing that can be employed for a given situation. As you did in the previous milestones, for this assignment, you will be creating unit tests using code to uncover errors in a mobile application. You will develop the appointment service and appointment object.
+Prompt
+
+For Project One, which is due in Module Six, you are asked to develop a mobile application for a customer. The customer will provide you with the requirements. Your job is to code the application and provide unit tests to verify that the application meets the customer’s requirements. For this milestone, you will focus on delivering the appointment services. The purpose of these services is to add, update, and delete appointment objects within the application.
+
+The appointment service uses in-memory data structures to support storing appointments (no database required). In addition, there is no user interface for this milestone. You will verify the appointment service through JUnit tests. The appointment service contains an appointment object along with the appointment service. The requirements are outlined below.
+Appointment Class Requirements
+
+    The appointment object shall have a required unique appointment ID string that cannot be longer than 10 characters. The appointment ID shall not be null and shall not be updatable.
+    The appointment object shall have a required appointment Date field. The appointment Date field cannot be in the past. The appointment Date field shall not be null.
+    Note: Use java.util.Date for the appointmentDate field and use before(new Date()) to check if the date is in the past.
+    The appointment object shall have a required description String field that cannot be longer than 50 characters. The description field shall not be null.
+
+Appointment Service Requirements
+
+    The appointment service shall be able to add appointments with a unique appointment ID.
+    The appointment service shall be able to delete appointments per appointment ID.
+
+Guidelines for Submission
+
+To complete this project, you must submit an Appointment Service zipped folder containing the following deliverables:
+
+    Appointment.java
+    AppointmentService.java
+    AppointmentTest.java
+    AppointmentServiceTest.java
