@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 public class TaskTest {
 	Task task = new Task();
+	Task task2 = new Task("taskid");
 	
 	@Test
 	void testName() {
@@ -36,7 +37,7 @@ public class TaskTest {
 	@Test
 	void testTaskID() {
 		// cannot be null
-		Assert.assertNotNull(task.getTaskID());
+		Assert.assertNotNull(task2.getTaskID());
 		// cannot be updated
 		/* Note: I don't know what the best technique for this test was,
 		 * because the field is private and there is no set method for it,

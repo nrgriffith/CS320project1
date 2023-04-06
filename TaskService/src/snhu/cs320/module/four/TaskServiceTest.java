@@ -30,6 +30,7 @@ public class TaskServiceTest {
 	@Test
 	void testSearch() {
 		Assert.assertEquals(tasks.searchTask("deleteme").getTaskID(), "deleteme");
+		Assert.assertNull(tasks.searchTask("1"));
 	}
 	
 	@Test
