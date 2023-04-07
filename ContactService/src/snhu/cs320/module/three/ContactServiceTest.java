@@ -47,6 +47,7 @@ public class ContactServiceTest {
 		Assert.assertTrue(contacts.updateContact(contactID, 2, testLName));
 		Assert.assertTrue(contacts.updateContact(contactID, 3, testAddress));
 		Assert.assertTrue(contacts.updateContact(contactID, 4, testPhone));
+		Assert.assertFalse(contacts.updateContact(contactID, 8, testPhone));
 		
 		// make sure the fields match the test data
 		Contact testContact = contacts.searchContact(contactID);
@@ -64,7 +65,7 @@ public class ContactServiceTest {
 		// ensure the contact is deleted
 		Contact testContact = contacts.searchContact("deleteme");
 		// contact not found
-		Assert.assertNull(testContact);	
+		Assert.assertNull(testContact);
+		Assert.assertFalse(contacts.deleteContact("deleteme"));
 		}
-	
 	}

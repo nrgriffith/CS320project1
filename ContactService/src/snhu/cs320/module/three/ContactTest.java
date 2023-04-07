@@ -14,6 +14,7 @@ public class ContactTest {
 	
 	// new contact to test
 	Contact contact = new Contact();
+	Contact contact2 = new Contact("abcdef");
 
 	@Test
 	void testFirstName() {
@@ -24,6 +25,7 @@ public class ContactTest {
 		Assert.assertFalse(contact.setFirstName(null));
 		// good name
 		Assert.assertTrue(contact.setFirstName("George"));
+		Assert.assertEquals("George", contact.getFirstName());
 
 	}
 	
@@ -36,6 +38,7 @@ public class ContactTest {
 		Assert.assertFalse(contact.setLastName(null));
 		// good name
 		Assert.assertTrue(contact.setLastName("Sarah"));
+		Assert.assertEquals("Sarah", contact.getLastName());
 
 	}
 	
@@ -46,8 +49,9 @@ public class ContactTest {
 		// cannot be empty/null
 		Assert.assertFalse(contact.setAddress(""));
 		Assert.assertFalse(contact.setAddress(null));
-		// good name
+		// good address
 		Assert.assertTrue(contact.setAddress("1 2nd st,place,oh,12345"));
+		Assert.assertEquals("1 2nd st,place,oh,12345", contact.getAddress());
 
 	}
 	
@@ -62,6 +66,7 @@ public class ContactTest {
 		Assert.assertFalse(contact.setPhone("123"));
 		// good phone
 		Assert.assertTrue(contact.setPhone("3048675309"));
+		Assert.assertEquals("3048675309", contact.getPhone());
 	}
 	
 	@Test

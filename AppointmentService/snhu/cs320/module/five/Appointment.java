@@ -57,10 +57,7 @@ public class Appointment {
 	
 	public Boolean setDate(Date date) {
 		Date curDate = new Date();
-		if(date == null) {
-			return false;
-		}
-		else if(date.before(curDate)) {
+		if(date == null || date.before(curDate)) {
 			return false;
 		}
 		else {

@@ -18,6 +18,7 @@ public class AppointmentTest {
 	private Appointment blankAppt = new Appointment();
 	private Appointment dateAppt = new Appointment(exDate);
 	private Appointment fullAppt = new Appointment(exDate, "An appointment");
+	private Appointment desAppt = new Appointment("another appointment");
 	
 	@Test
 	void testApptID() {
@@ -34,6 +35,8 @@ public class AppointmentTest {
 		Assert.assertFalse(blankAppt.setDescription(""));
 		// just right
 		Assert.assertTrue(blankAppt.setDescription("change oil"));
+		Assert.assertEquals("change oil", blankAppt.getDescription());
+
 	}
 	
 	@Test
@@ -42,5 +45,13 @@ public class AppointmentTest {
 		Assert.assertFalse(dateAppt.setDate(pastDate));
 		// future date
 		Assert.assertTrue(dateAppt.setDate(exDate));
+		// null/empty
+		Assert.assertFalse(dateAppt.setDate(null));
+	}
+	
+	@Test
+	void testGetters() { 
+		Assert.assertEquals(exDate, dateAppt.getDate());
+		Assert.assertEquals("4", blankAppt.getID());
 	}
 }

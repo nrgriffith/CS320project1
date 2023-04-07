@@ -47,4 +47,11 @@ public class TaskTest {
 		Assert.assertThrows(NoSuchFieldException.class, ()->{task.getClass().getField("taskID");});
 	}
 	
+	@Test
+	void testGetters() {
+		// adding these to get test coverage higher
+		Assert.assertNotNull(task.getTaskDescription());
+		Assert.assertNotNull(task.getTaskName());
+	}
+	
 }

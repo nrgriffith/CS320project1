@@ -21,12 +21,9 @@ public class ContactService {
 			// add a new contact
 			contact = new Contact(id);
 			contactsList.add(contact);
-			return contact.getContactID();
-
 		}
-		else { //
-			return null;
-		}
+		
+		return contact.getContactID();
 	
 	}
 	
@@ -62,9 +59,6 @@ public class ContactService {
 	public Boolean updateContact(String id, int item, String value) {
 		// update the contact's first name
 		Contact contact = searchContact(id);
-		if(contact == null) {
-			return false;
-		}
 		switch(item) {
 			case 1: // update first name
 				return contact.setFirstName(value);
